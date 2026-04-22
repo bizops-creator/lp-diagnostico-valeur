@@ -110,26 +110,14 @@ export default function App() {
             >
               <div className="relative group">
                 <div className="absolute -inset-4 bg-[#328848]/20 blur-3xl rounded-full group-hover:bg-[#328848]/30 transition-all duration-700" />
-                <a 
-                  href="/assets/playbook.pdf" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="relative block"
-                >
-                  <div className="w-full max-w-[450px] aspect-[3/4] bg-neutral-900 border border-white/10 rounded-lg flex items-center justify-center p-8 text-center group-hover:border-[#328848]/50 transition-all">
-                    <div>
-                      <FileText className="w-16 h-16 text-[#328848] mx-auto mb-4" />
-                      <h3 className="text-xl font-bold mb-2">Playbook Valeur</h3>
-                      <p className="text-slate-400 text-sm italic">Clique para abrir o PDF</p>
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg backdrop-blur-[2px]">
-                    <div className="bg-[#328848] text-white px-6 py-3 font-black text-sm uppercase tracking-widest flex items-center gap-2">
-                       <FileText className="w-4 h-4" />
-                       ABRIR PLAYBOOK PDF
-                    </div>
-                  </div>
-                </a>
+                <div className="relative inline-block">
+                  <img 
+                    src="/assets/playbook_page-0001.jpg" 
+                    alt="Playbook Valeur e Diagnóstico 360º" 
+                    className="w-full max-w-[450px] shadow-2xl transition-all duration-500 rounded-lg border border-white/10"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
