@@ -112,9 +112,9 @@ export default function App() {
                 <div className="absolute -inset-4 bg-[#328848]/20 blur-3xl rounded-full group-hover:bg-[#328848]/30 transition-all duration-700" />
                 <div className="relative inline-block">
                   <img 
-                    src="/assets/playbook_page-0001.jpg" 
+                    src="/assets/playbook_page-0001.png" 
                     alt="Playbook Valeur e Diagnóstico 360º" 
-                    className="w-full max-w-[450px] shadow-2xl transition-all duration-500 rounded-lg border border-white/10"
+                    className="w-full max-w-[450px] shadow-2xl transition-all duration-500 rounded-lg"
                     referrerPolicy="no-referrer"
                   />
                 </div>
