@@ -111,7 +111,7 @@ export default function App() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-[#328848]/20 blur-3xl rounded-full group-hover:bg-[#328848]/30 transition-all duration-700" />
                 <img 
-                  src="/assets/Playbook.pdf" 
+                  src="/assets/playbook.pdf" 
                   alt="Playbook Valeur e Diagnóstico 360º" 
                   className="relative w-full max-w-[450px] shadow-2xl transition-transform duration-500"
                   referrerPolicy="no-referrer"
