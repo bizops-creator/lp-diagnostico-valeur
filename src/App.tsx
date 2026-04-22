@@ -108,14 +108,31 @@ export default function App() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative flex justify-center"
             >
-              <div className="relative group">
+              <div className="relative group w-full max-w-[450px]">
                 <div className="absolute -inset-4 bg-[#328848]/20 blur-3xl rounded-full group-hover:bg-[#328848]/30 transition-all duration-700" />
-                <img 
-                  src="/assets/playbook.pdf" 
-                  alt="Playbook Valeur e Diagnóstico 360º" 
-                  className="relative w-full max-w-[450px] shadow-2xl transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
+                
+                {/* Playbook Visual Representation (since PDF can't be an <img>) */}
+                <a 
+                  href="/assets/playbook.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="relative block w-full aspect-[3/4] bg-neutral-900 border-2 border-white/10 overflow-hidden shadow-2xl group hover:border-[#328848]/50 transition-all"
+                >
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-neutral-900 via-[#1a1a1a] to-black">
+                    <div className="w-20 h-20 bg-[#328848] flex items-center justify-center mb-6 shadow-lg shadow-[#328848]/20 group-hover:scale-110 transition-transform duration-500">
+                      <FileText className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-black mb-2 uppercase tracking-tighter">PLAYBOOK VALEUR</h3>
+                    <p className="text-slate-400 text-sm font-bold uppercase tracking-widest mb-6">Diagnóstico 360º</p>
+                    <div className="mt-auto px-6 py-3 bg-white/5 border border-white/10 flex items-center gap-2 group-hover:bg-[#328848] group-hover:text-white transition-colors">
+                      <ArrowRight className="w-4 h-4" />
+                      <span className="text-[10px] font-black uppercase tracking-widest">ABRIR DOCUMENTO PDF</span>
+                    </div>
+                  </div>
+                  
+                  {/* Glass reflection effect */}
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
+                </a>
               </div>
             </motion.div>
           </div>
@@ -331,11 +348,39 @@ export default function App() {
               ))}
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-[3/4] bg-slate-900 border-b-8 border-[#328848] overflow-hidden">
-                <img src="/assets/felipe.png" alt="Felipe Assis" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" referrerPolicy="no-referrer" />
+              <div className="aspect-[3/4] bg-neutral-900 border-b-8 border-[#328848] overflow-hidden relative group">
+                <img 
+                  src="/assets/felipe.png" 
+                  alt="Felipe Assis" 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.classList.add('flex', 'items-center', 'justify-center');
+                    const text = document.createElement('span');
+                    text.innerText = 'FELIPE';
+                    text.className = 'font-black text-slate-800 text-2xl';
+                    target.parentElement!.appendChild(text);
+                  }}
+                />
               </div>
-              <div className="aspect-[3/4] bg-slate-900 border-b-8 border-[#328848] overflow-hidden">
-                <img src="/assets/luan.png" alt="Luan Taube" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" referrerPolicy="no-referrer" />
+              <div className="aspect-[3/4] bg-neutral-900 border-b-8 border-[#328848] overflow-hidden relative group">
+                <img 
+                  src="/assets/luan.png" 
+                  alt="Luan Taube" 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.classList.add('flex', 'items-center', 'justify-center');
+                    const text = document.createElement('span');
+                    text.innerText = 'LUAN';
+                    text.className = 'font-black text-slate-800 text-2xl';
+                    target.parentElement!.appendChild(text);
+                  }}
+                />
               </div>
             </div>
           </div>
