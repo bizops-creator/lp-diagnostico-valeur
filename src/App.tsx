@@ -34,6 +34,12 @@ import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Input } from '@/components/ui/input';
 
+// Importando imagens de forma robusta para o build
+import logo from './assets/logo.png';
+import playbookCover from './assets/playbook_page-0001.jpg';
+import felipeImg from './assets/felipe.png';
+import luanImg from './assets/luan.png';
+
 export default function App() {
   const [formData, setFormData] = useState({
     name: '',
@@ -70,7 +76,7 @@ export default function App() {
         <div className="container mx-auto max-w-6xl">
           {/* Logo */}
           <div className="mb-16">
-            <img src="/assets/logo.png" alt="Valeur Consultoria" className="h-12 w-auto object-contain" />
+            <img src={logo} alt="Valeur Consultoria" className="h-12 w-auto object-contain" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -117,14 +123,10 @@ export default function App() {
                   className="relative block"
                 >
                   <img 
-                    src="/assets/playbook_page-0001.jpg" 
+                    src={playbookCover} 
                     alt="Playbook Valeur e Diagnóstico 360º" 
                     className="w-full max-w-[450px] shadow-2xl transition-all duration-500 rounded-lg border border-white/10 group-hover:scale-[1.02] group-hover:border-[#328848]/50"
                     referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "https://placehold.co/450x600/1a1a1a/328848?text=Playbook+Valeur";
-                    }}
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg backdrop-blur-[2px]">
                     <div className="bg-[#328848] text-white px-6 py-3 font-black text-sm uppercase tracking-widest flex items-center gap-2">
@@ -350,36 +352,18 @@ export default function App() {
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-[3/4] bg-neutral-900 border-b-8 border-[#328848] overflow-hidden relative group">
                 <img 
-                  src="/assets/felipe.png" 
+                  src={felipeImg} 
                   alt="Felipe Assis" 
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
                   referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    target.parentElement!.classList.add('flex', 'items-center', 'justify-center');
-                    const text = document.createElement('span');
-                    text.innerText = 'FELIPE';
-                    text.className = 'font-black text-slate-800 text-2xl';
-                    target.parentElement!.appendChild(text);
-                  }}
                 />
               </div>
               <div className="aspect-[3/4] bg-neutral-900 border-b-8 border-[#328848] overflow-hidden relative group">
                 <img 
-                  src="/assets/luan.png" 
+                  src={luanImg} 
                   alt="Luan Taube" 
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
                   referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    target.parentElement!.classList.add('flex', 'items-center', 'justify-center');
-                    const text = document.createElement('span');
-                    text.innerText = 'LUAN';
-                    text.className = 'font-black text-slate-800 text-2xl';
-                    target.parentElement!.appendChild(text);
-                  }}
                 />
               </div>
             </div>
@@ -630,7 +614,7 @@ export default function App() {
       <footer className="py-16 bg-[#0a0a0a] text-center border-t border-white/5">
         <div className="container mx-auto px-4">
           <div className="mb-8 flex justify-center">
-            <img src="/assets/logo.png" alt="Valeur Consultoria" className="h-10 w-auto object-contain opacity-50" />
+            <img src={logo} alt="Valeur Consultoria" className="h-10 w-auto object-contain opacity-50" />
           </div>
           
           <p className="text-slate-500 font-bold text-xs mb-8 uppercase tracking-widest">Atendemos empresas B2B com 10 a 50 funcionários</p>
