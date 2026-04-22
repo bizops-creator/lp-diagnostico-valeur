@@ -70,7 +70,7 @@ export default function App() {
         <div className="container mx-auto max-w-6xl">
           {/* Logo */}
           <div className="mb-16">
-            <div className="text-2xl font-black text-[#328848]">VALEUR</div>
+            <img src="/assets/logo.png" alt="Valeur Consultoria" className="h-12 w-auto object-contain" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -599,7 +599,7 @@ export default function App() {
       <footer className="py-16 bg-[#0a0a0a] text-center border-t border-white/5">
         <div className="container mx-auto px-4">
           <div className="mb-8 flex justify-center">
-            <div className="text-xl font-black text-[#328848] opacity-50">VALEUR</div>
+            <img src="/assets/logo.png" alt="Valeur Consultoria" className="h-10 w-auto object-contain opacity-50" />
           </div>
           
           <p className="text-slate-500 font-bold text-xs mb-8 uppercase tracking-widest">Atendemos empresas B2B com 10 a 50 funcionários</p>
