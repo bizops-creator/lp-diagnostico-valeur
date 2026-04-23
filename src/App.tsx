@@ -333,11 +333,29 @@ export default function App() {
               ))}
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-[3/4] bg-neutral-900 border-b-8 border-[#328848] flex items-center justify-center p-4 text-center">
-                <span className="font-black text-slate-700 text-xl">FELIPE ASSIS</span>
+              <div className="relative aspect-[3/4] bg-neutral-900 border-b-8 border-[#328848] overflow-hidden group">
+                <img 
+                  src="/assets/felipe.png" 
+                  alt="Felipe Assis" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.innerHTML = '<div className="flex items-center justify-center h-full"><span className="font-black text-slate-700 text-xl uppercase">Felipe Assis</span></div>';
+                  }}
+                />
               </div>
-              <div className="aspect-[3/4] bg-neutral-900 border-b-8 border-[#328848] flex items-center justify-center p-4 text-center">
-                <span className="font-black text-slate-700 text-xl">LUAN TAUBE</span>
+              <div className="relative aspect-[3/4] bg-neutral-900 border-b-8 border-[#328848] overflow-hidden group">
+                <img 
+                  src="/assets/luan.png" 
+                  alt="Luan Taube" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.innerHTML = '<div className="flex items-center justify-center h-full"><span className="font-black text-slate-700 text-xl uppercase">Luan Taube</span></div>';
+                  }}
+                />
               </div>
             </div>
           </div>
